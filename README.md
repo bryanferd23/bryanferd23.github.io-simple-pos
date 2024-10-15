@@ -1,3 +1,5 @@
+A simple Point of Sale System that can be seen in fast food chains for costumer use.
+
 Demo:
 https://bryanferd23.github.io/bryanferd23.github.io-simple-pos/
 
