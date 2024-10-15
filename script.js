@@ -2,11 +2,25 @@ $(document).ready(function () {
   // Select all sidebar items
   const $sidebarItems = $("aside nav ul li");
 
+  // Select all containers within the main element
+  const $containers = $("main > div");
+
   // Add click event listeners to sidebar items
   $sidebarItems.on("click", function () {
-    $("main").load("views/" + $(this).find("span").html() + ".html");
-    // Add click event listener to anchor tags within main
+    const targetId = $(this).find("span").html().toLowerCase() + "Container";
+    
+    // Hide all containers
+    $containers.addClass("hidden");
+    
+    // Show the target container
+    $("#" + targetId).removeClass("hidden");
+    
+    // Update active state of sidebar items
+    $sidebarItems.removeClass("bg-gray-200");
+    $(this).addClass("bg-gray-200");
   });
+
+  // Trigger click on the first sidebar item to show initial content
   $sidebarItems.first().trigger("click");
 
   // Function to open the cart modal
