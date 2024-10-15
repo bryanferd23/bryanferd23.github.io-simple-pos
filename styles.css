@@ -1,0 +1,10 @@
+.flying-image {
+  position: fixed;
+  z-index: 9999;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  pointer-events: none;
+}
