@@ -43,7 +43,7 @@
           >
             <a href="#" class="flex items-center space-x-4">
               <img src="resources/images/burger0.png" alt="Logo" class="h-14" />
-              <span class="text-lg">Burgers</span>
+              <span class="text-lg hidden md:inline">Burgers</span>
             </a>
           </li>
           <li
@@ -51,7 +51,7 @@
           >
             <a href="#" class="flex items-center space-x-4">
               <img src="resources/images/fries0.png" alt="Logo" class="h-14" />
-              <span class="text-lg">Fries</span>
+              <span class="text-lg hidden md:inline">Fries</span>
             </a>
           </li>
           <li
@@ -63,7 +63,7 @@
                 alt="Logo"
                 class="h-12"
               />
-              <span class="text-lg">Chicken</span>
+              <span class="text-lg hidden md:inline">Chicken</span>
             </a>
           </li>
           <li
@@ -71,7 +71,7 @@
           >
             <a href="#" class="flex items-center space-x-4">
               <img src="resources/images/drinks0.png" alt="Logo" class="h-14" />
-              <span class="text-lg">Drinks</span>
+              <span class="text-lg hidden md:inline">Drinks</span>
             </a>
           </li>
         </ul>
@@ -79,7 +79,7 @@
     </aside>
 
     <!-- Main content -->
-    <main class="px-4 mx-auto ml-48">
+    <main class="px-4 mx-auto ml-24 md:ml-48 lg:ml-48 xl:ml-48">
       <div id="burgersContainer" class="hidden">
         <br />
         <br />
@@ -391,6 +391,10 @@
           id="openCart"
           class="flex items-center px-4 py-2 text-lg font-semibold text-white bg-gray-800 rounded-tl hover:bg-gray-700"
         >
+          <span
+            id="cartBadge"
+            class="absolute -left-2 -top-1 bg-red-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs hidden"
+          ></span>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             class="w-5 h-5 mr-2"

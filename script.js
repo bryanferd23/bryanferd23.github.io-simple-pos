@@ -115,6 +115,7 @@ $(document).ready(function () {
     var cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
     var $cartItems = $('#cartItems');
     var total = 0;
+    var itemCount = 0;
     
     $cartItems.empty();
     
@@ -137,9 +138,13 @@ $(document).ready(function () {
         </div>
       `);
       total += item.total;
+      itemCount += item.quantity;
     });
     
     $('#cartTotal').text('$' + total.toFixed(2));
+
+    // Update the cart badge
+    updateCartBadge(itemCount);
 
     // Add event listeners for remove, increase, and decrease buttons
     $('.remove-item').on('click', function() {
@@ -156,6 +161,16 @@ $(document).ready(function () {
       var index = $(this).data('index');
       updateQuantity(index, -1);
     });
+  }
+
+  // Function to update the cart badge
+  function updateCartBadge(itemCount) {
+    var $cartBadge = $('#cartBadge');
+    if (itemCount > 0) {
+      $cartBadge.text(itemCount).removeClass('hidden');
+    } else {
+      $cartBadge.text('').addClass('hidden');
+    }
   }
 
   // Function to remove item from cart
@@ -200,4 +215,6 @@ $(document).ready(function () {
     $("#cartModal").addClass("hidden");
   });
 
+  // Call updateCartDisplay when the page loads
+  updateCartDisplay();
 });
